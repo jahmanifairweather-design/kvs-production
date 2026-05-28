@@ -1,6 +1,0 @@
-
-const consultationLink="https://kingvisualstudio.square.site";
-document.querySelectorAll("[data-consultation]").forEach((button)=>{button.setAttribute("href",consultationLink);button.setAttribute("target","_blank");button.setAttribute("rel","noopener noreferrer");});
-const menuBtn=document.querySelector(".menu-btn");const mobileMenu=document.querySelector(".mobile-menu");if(menuBtn&&mobileMenu){menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));}
-const header=document.querySelector(".kvs-header");let lastScroll=window.scrollY;window.addEventListener("scroll",()=>{const currentScroll=window.scrollY;if(!header)return;if(currentScroll>80)header.classList.add("nav-compact");else header.classList.remove("nav-compact");if(currentScroll>lastScroll&&currentScroll>120)header.classList.add("nav-hidden");else header.classList.remove("nav-hidden");lastScroll=Math.max(currentScroll,0);});
-const reveals=document.querySelectorAll(".reveal");const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("active");observer.unobserve(entry.target);}});},{threshold:.16,rootMargin:"0px 0px -70px 0px"});reveals.forEach(el=>observer.observe(el));
