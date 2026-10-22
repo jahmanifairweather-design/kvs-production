@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/book",
+      "destination": "https://kingvisualstudio.square.site",
+      "permanent": false
+    },
+    {
+      "source": "/book.html",
+      "destination": "https://kingvisualstudio.square.site",
+      "permanent": false
+    }
+  ]
 }

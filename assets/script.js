@@ -1,53 +1,43 @@
-
-const consultationLink = "https://kingvisualstudio.square.site";
-
-document.querySelectorAll("[data-consultation]").forEach((button) => {
-  button.setAttribute("href", consultationLink);
-  button.setAttribute("target", "_blank");
-  button.setAttribute("rel", "noopener noreferrer");
-});
-
-const menuBtn = document.querySelector(".menu-btn");
-const mobileMenu = document.querySelector(".mobile-menu");
+const menuBtn = document.querySelector('.menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
 
 if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("open"));
-  mobileMenu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => mobileMenu.classList.remove("open"));
+  const setMenuOpen = (open, returnFocus = false) => {
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.inert = !open;
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+    document.body.classList.toggle('menu-open', open);
+    if (open) mobileMenu.querySelector('a')?.focus();
+    else if (returnFocus) menuBtn.focus();
+  };
+  menuBtn.addEventListener('click', () => setMenuOpen(!mobileMenu.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setMenuOpen(false));
   });
-}
-
-const header = document.querySelector(".kvs-header");
-let lastScroll = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.scrollY;
-
-  if (!header) return;
-
-  if (currentScroll > 80) {
-    header.classList.add("nav-compact");
-  } else {
-    header.classList.remove("nav-compact");
-  }
-
-  if (currentScroll > lastScroll && currentScroll > 120) {
-    header.classList.add("nav-hidden");
-  } else {
-    header.classList.remove("nav-hidden");
-  }
-
-  lastScroll = Math.max(currentScroll, 0);
-});
-
-const reveals = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      observer.unobserve(entry.target);
+  document.addEventListener('keydown', event => {
+    if (!mobileMenu.classList.contains('open')) return;
+    if (event.key === 'Escape') setMenuOpen(false, true);
+    if (event.key === 'Tab') {
+      const controls = [menuBtn, ...mobileMenu.querySelectorAll('a')];
+      const index = controls.indexOf(document.activeElement);
+      event.preventDefault();
+      controls[(index + (event.shiftKey ? -1 : 1) + controls.length) % controls.length].focus();
     }
   });
-},{threshold:.16, rootMargin:"0px 0px -70px 0px"});
+  window.matchMedia('(max-width: 1200px)').addEventListener('change', () => setMenuOpen(false));
+  setMenuOpen(false);
+  document.documentElement.classList.add('enhanced-menu');
+}
 
-reveals.forEach(el => observer.observe(el));
+const header = document.querySelector('.kvs-header');
+let lastScroll = window.scrollY;
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+  if (!header) return;
+  header.classList.toggle('nav-compact', currentScroll > 80);
+  const keepVisible = header.contains(document.activeElement) || mobileMenu?.classList.contains('open');
+  header.classList.toggle('nav-hidden', !keepVisible && currentScroll > lastScroll && currentScroll > 120);
+  lastScroll = Math.max(currentScroll, 0);
+}, { passive: true });
