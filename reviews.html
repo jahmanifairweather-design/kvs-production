@@ -4,10 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Reviews | KingVisual Studios</title>
-<meta name="description" content="Luxury photo and video coverage by KingVisual Studios."/>
+<meta name="description" content="Client review information and consultation options for KingVisual Studios wedding, event, portrait, and video services."/>
 <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="kvs-header">
   <nav class="kvs-nav">
@@ -18,15 +19,15 @@
       <a href="portraits.html">Portraits</a>
       <a href="video.html">Video</a>
       <a href="experience.html">Experience</a>
-      <a href="reviews.html">Reviews</a>
+      <a href="reviews.html" aria-current="page">Reviews</a>
       <a href="faq.html">FAQ</a>
-      <a href="#" data-consultation>Book Consultation</a>
+      <a href="https://kingvisualstudio.square.site" data-consultation>Book Consultation</a>
     </div>
-    <button class="menu-btn" type="button">Menu</button>
+    <button class="menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false">Menu</button>
   </nav>
 </header>
 
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
   <nav>
     <a href="index.html">Home</a>
     <a href="weddings.html">Weddings</a>
@@ -34,41 +35,46 @@
     <a href="portraits.html">Portraits</a>
     <a href="video.html">Video</a>
     <a href="experience.html">Experience</a>
-    <a href="reviews.html">Reviews</a>
+    <a href="reviews.html" aria-current="page">Reviews</a>
     <a href="faq.html">FAQ</a>
-    <a href="#" data-consultation>Book Consultation</a>
+    <a href="https://kingvisualstudio.square.site" data-consultation>Book Consultation</a>
   </nav>
 </div>
 
 
-<main>
-<section class="page-hero">
-  <div class="page-hero-media" style="--hero-image:url('/assets/images/gallery-2.jpg')"></div>
+<main id="main-content">
+<section class="page-hero text-hero">
   <div class="page-hero-content reveal">
-    <div class="eyebrow">Reviews</div>
-    <h1>Trusted moments. Royal experiences.</h1>
-    <p>Use this page for client quotes, screenshots, and future video testimonials.</p>
+    <div class="eyebrow">Client Reviews</div>
+    <h1>Confidence in your choice.</h1>
+    <p>Explore our work and talk through your priorities before choosing your photo or video coverage.</p>
   </div>
 </section>
 <section>
-  <div class="container review-grid">
-    <div class="review reveal"><p>“The experience felt smooth, professional, and elevated from start to finish.”</p></div>
-    <div class="review reveal"><p>“Every important moment was captured beautifully and intentionally.”</p></div>
-    <div class="review reveal"><p>“KingVisual Studios made the whole process feel effortless.”</p></div>
+  <div class="container split reveal">
+    <div><div class="label">Client Feedback</div><h2>Get to know the experience.</h2></div>
+    <div><p>Published client reviews are not available on this page yet. During your consultation, ask about relevant past projects and how we would approach your coverage.</p><div class="cta-row"><a href="experience.html" class="btn">Explore the Process</a><a href="weddings.html" class="btn">Wedding Coverage</a><a href="portraits.html" class="btn">Portrait Sessions</a><a href="video.html" class="btn">Video Projects</a></div></div>
+  </div>
+</section>
+<section class="editorial-band">
+  <div class="container reveal">
+    <div class="label">Let’s Talk</div><h2>Tell us what matters to you.</h2>
+    <p>Share your date, project type, and priorities so we can discuss whether the coverage fits your needs.</p>
+    <div class="cta-row centered"><a href="https://kingvisualstudio.square.site" class="btn btn-gold" data-consultation>Book a Consultation</a></div>
   </div>
 </section>
 </main>
 
 
 <div class="consult-mobile-bar">
-  <a href="#" data-consultation>Book Consultation</a>
+  <a href="https://kingvisualstudio.square.site" data-consultation>Book Consultation</a>
 </div>
 
 <footer class="kvs-footer">
   <div class="container footer-grid">
     <div>KingVisual Studios</div>
     <div>Luxury Photo + Video</div>
-    <div>© All Rights Reserved</div>
+    <div><a href="book.html">Book a Consultation</a> · © KingVisual Studios</div>
   </div>
 </footer>
 
