@@ -361,3 +361,47 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* KVS editorial experience — refined motion and visual hierarchy */
+:root{--cream:#f5f1e9;--gold:#ad916c;--muted:#77716a}
+html{scroll-behavior:smooth}
+body{background:#fdfbf7}
+.kvs-header{mix-blend-mode:normal;background:linear-gradient(to bottom,rgba(0,0,0,.28),transparent);padding:27px 0}
+.kvs-header.nav-compact{background:rgba(22,21,20,.91);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.kvs-nav{font-size:.66rem;letter-spacing:.13em;font-weight:600}
+.brand strong{font-family:var(--font-sans);font-size:.91rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.brand span{letter-spacing:.14em;font-size:.49rem}
+.nav-links a{transition:opacity .3s ease}
+.editorial-hero{min-height:100svh}
+.editorial-hero .hero-media{background-image:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.05)),var(--hero-image);animation:heroDrift 18s ease-out forwards}
+.editorial-hero::after{background:linear-gradient(0deg,rgba(0,0,0,.48),transparent 58%)}
+.editorial-hero .hero-content{padding-bottom:clamp(85px,12vh,150px)}
+.editorial-hero h1{font-size:clamp(4.6rem,10.8vw,11.5rem);letter-spacing:-.047em;line-height:.82;max-width:1100px;font-weight:400}
+h1 em,h2 em{font-weight:400}
+.editorial-hero .eyebrow{color:#e9e0d1;letter-spacing:.3em;font-weight:600;font-size:.64rem;margin-bottom:30px}
+.editorial-hero p{font-size:clamp(.95rem,1.4vw,1.14rem);max-width:470px;line-height:1.8;margin-top:36px}
+.editorial-hero .btn{border-radius:0;border:0;border-bottom:1px solid rgba(255,255,255,.75);padding:12px 0;gap:25px;background:none;font-weight:600;letter-spacing:.2em}
+.editorial-hero .btn:hover{transform:none;background:none;color:#fff;opacity:.65}
+.manifesto-section{padding:clamp(115px,16vw,240px) 0}
+.manifesto-section .split{grid-template-columns:1.25fr .75fr;gap:clamp(35px,8vw,140px)}
+.manifesto-section h2{font-size:clamp(4rem,7.5vw,8rem);line-height:.92;font-weight:400}
+.manifesto-section p{font-size:1.1rem;line-height:2}
+.portfolio-heading{padding:20px 0 50px;display:flex;justify-content:space-between;align-items:end;gap:30px}
+.portfolio-heading h2{font-size:clamp(3.5rem,6vw,7rem);font-weight:400;margin:0;max-width:600px}
+.portfolio-heading .label{max-width:180px;line-height:2}
+.editorial-grid{gap:12px;background:#fdfbf7;padding:0 12px 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.editorial-grid .category-card{min-height:78svh;padding:clamp(25px,4vw,70px)}
+.editorial-grid .category-card:nth-child(2),.editorial-grid .category-card:nth-child(4){transform:translateY(0)}
+.editorial-grid .category-card::before{transition:transform 1.4s cubic-bezier(.2,.7,.2,1);filter:saturate(.85)}
+.editorial-grid .category-card:hover::before{transform:scale(1.045)}
+.editorial-grid .category-card::after{background:linear-gradient(0deg,rgba(0,0,0,.68),transparent 60%)}
+.editorial-grid .category-card h3{font-size:clamp(3.6rem,6.5vw,7rem);font-weight:400;line-height:.9}
+.editorial-grid .category-card p{max-width:390px;line-height:1.8;font-size:.9rem}
+.editorial-finale{padding:clamp(130px,17vw,250px) 0;background:#eae3d7}
+.editorial-finale h2{font-weight:400;line-height:.95;font-size:clamp(4rem,8vw,9rem)}
+.editorial-finale .btn{border-radius:0;background:transparent;color:#171717;border:0;border-bottom:1px solid #171717;padding:14px 4px}
+.editorial-finale .btn:hover{transform:none;background:transparent;color:#171717;opacity:.6}
+.reveal{transform:translateY(28px);filter:none;transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
+@media(max-width:1050px){.manifesto-section .split{grid-template-columns:1fr}}
+@media(max-width:720px){.editorial-hero h1{font-size:clamp(3.9rem,15vw,6rem)}.editorial-hero .hero-content{padding-bottom:105px}.portfolio-heading{display:block;padding-bottom:35px}.portfolio-heading h2{margin-top:20px}.editorial-grid{grid-template-columns:1fr;gap:8px;padding:0 8px 8px}.editorial-grid .category-card{min-height:67svh}.editorial-grid .category-card h3{font-size:clamp(3.5rem,13vw,5.5rem)}.manifesto-section{padding:100px 0}.editorial-finale{padding:110px 0}.editorial-hero .cta-row{display:flex}.editorial-hero .btn{width:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-media,.page-hero-media{animation:none!important;transform:none!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}.category-card::before{transition:none!important}}
