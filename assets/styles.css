@@ -420,3 +420,11 @@ h1 em,h2 em{font-weight:400}
 .event-gallery-layout figcaption{position:absolute;left:24px;bottom:22px;color:#fff;font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;text-shadow:0 1px 9px #111}
 @media(max-width:720px){.event-gallery-section{padding:70px 0 90px}.event-gallery-intro{display:block;padding-bottom:30px}.event-gallery-intro h2{margin:18px 0}.event-gallery-layout{gap:8px}.event-gallery-layout figure{aspect-ratio:3/4}.event-gallery-layout .event-gallery-feature,.event-gallery-layout .event-gallery-wide{aspect-ratio:4/5}.event-gallery-layout figcaption{left:13px;bottom:13px;font-size:.55rem}}
 @media(prefers-reduced-motion:reduce){.event-gallery-layout img{transition:none!important}}
+
+/* Homepage: refined luxury consultation action */
+.editorial-hero .cta-row{margin-top:38px}
+.editorial-hero .btn.luxury-consult-btn{display:inline-flex;gap:38px;align-items:center;justify-content:space-between;background:#f7f2e9;color:#211e1a;border:1px solid #f7f2e9;border-radius:2px;padding:19px 23px;font-size:.68rem;letter-spacing:.17em;font-weight:700;min-width:270px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:background .35s ease,color .35s ease,box-shadow .35s ease}
+.editorial-hero .btn.luxury-consult-btn:hover{background:#d8c8ae;color:#211e1a;border-color:#d8c8ae;opacity:1;box-shadow:0 14px 44px rgba(0,0,0,.22)}
+.luxury-cta-arrow{font-size:1.1rem;font-weight:400;line-height:1}
+.editorial-grid .category-card:nth-child(3)::before{background-position:center 32%}
+@media(max-width:720px){.editorial-hero .btn.luxury-consult-btn{min-width:0;width:auto;max-width:100%;gap:24px;padding:17px 20px}}
